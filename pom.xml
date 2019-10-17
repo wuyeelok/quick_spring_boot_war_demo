@@ -29,7 +29,7 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
-		<!-- Set spring-boot-starter-tomcat to provided -->
+		<!-- Step 2: Set spring-boot-starter-tomcat to provided -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-tomcat</artifactId>

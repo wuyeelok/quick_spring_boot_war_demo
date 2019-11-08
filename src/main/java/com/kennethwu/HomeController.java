@@ -5,13 +5,14 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 
 @Controller
 public class HomeController {
 
 	@GetMapping("/")
-	public String home() {
+	public String home(ModelMap model) {
 		System.out.println("calling home method");
 
 		// Test JDBC
@@ -19,15 +20,15 @@ public class HomeController {
 		try {
 			String jdbcUrl = "jdbc:mysql://localhost:3306/kenneth_alien?useSSL=false&serverTimezone=UTC";
 
-			String user = "kenken";
+			String dbUser = "kenken";
 
-			String pass = "12345678";
+			String dbPass = "12345678";
 
-			System.out.println("Connect to database: " + jdbcUrl + "...");
+			myConn = DriverManager.getConnection(jdbcUrl, dbUser, dbPass);
 
-			myConn = DriverManager.getConnection(jdbcUrl, user, pass);
+			model.addAttribute("jdbcUrl", jdbcUrl);
 
-			System.out.println("Connection successful!!!");
+			model.addAttribute("dbUser", dbUser);
 
 		} catch (Exception exc) {
 			exc.printStackTrace();

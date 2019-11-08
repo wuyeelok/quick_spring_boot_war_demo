@@ -13,7 +13,6 @@ public class HomeController {
 
 	@GetMapping("/")
 	public String home(ModelMap model) {
-		System.out.println("calling home method");
 
 		// Test JDBC
 		Connection myConn = null;

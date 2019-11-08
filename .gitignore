@@ -35,3 +35,9 @@ bin/
 
 ### Mac os ###
 .DS_Store
+
+### Java ###
+*.class
+
+### Eclipse ###
+.metadata

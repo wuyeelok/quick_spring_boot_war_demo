@@ -8,7 +8,9 @@
 </head>
 <body>
 	<h1>Welcome to Spring Boot War Demo</h1>
-
+	
+	<p>Now the time is ${currentTime}</p>
+	
 	<p>
 		Connection successful to DB: <b>${jdbcUrl}</b><br>using user: <b>${dbUser}</b>
 	</p>

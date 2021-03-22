@@ -28,12 +28,12 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 			<!-- Step 4: Add exclusion for logging -->
-			<exclusions>
+			<!-- <exclusions>
 				<exclusion>
 					<groupId>org.springframework.boot</groupId>
 					<artifactId>spring-boot-starter-logging</artifactId>
 				</exclusion>
-			</exclusions>
+			</exclusions> -->
 		</dependency>
 
 		<!-- Step 2: Set spring-boot-starter-tomcat to provided -->

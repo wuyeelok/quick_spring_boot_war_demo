@@ -3,7 +3,10 @@ package com.kennethwu;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.Date;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -15,6 +18,8 @@ public class HomeController {
 	private final String jdbcUrl;
 	private final String dbUser;
 	private final String dbPass;
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(HomeController.class);
 
 	public HomeController(@Value("${spring.datasource.url}") String jdbcUrl,
 			@Value("${spring.datasource.username}") String dbUser,
@@ -30,6 +35,8 @@ public class HomeController {
 	@GetMapping("/")
 	public String home(ModelMap model) {
 
+		LOGGER.info("Testing log function!");
+
 		// Test JDBC
 		Connection myConn = null;
 		try {
@@ -39,6 +46,8 @@ public class HomeController {
 			model.addAttribute("jdbcUrl", this.jdbcUrl);
 
 			model.addAttribute("dbUser", this.dbUser);
+
+			model.addAttribute("currentTime", new Date().toString());
 
 		} catch (Exception exc) {
 			exc.printStackTrace();
